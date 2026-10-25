@@ -1,3 +1,9 @@
+const employees = [
+  { id: 1, name: "Rahul", department: "IT", salary: 80000 },
+  { id: 2, name: "Sneha", department: "HR", salary: 78000 },
+  { id: 3, name: "Arun", department: "Finance", salary: 90000 },
+];
+
 function App() {
   return (
     <div>
@@ -17,26 +23,14 @@ function App() {
         </thead>
 
         <tbody>
-          <tr>
-            <td>1</td>
-            <td>Rahul</td>
-            <td>IT</td>
-            <td>70000</td>
-          </tr>
-
-          <tr>
-            <td>2</td>
-            <td>Sneha</td>
-            <td>HR</td>
-            <td>80000</td>
-          </tr>
-
-          <tr>
-            <td>3</td>
-            <td>Suhas</td>
-            <td>Finance</td>
-            <td>85000</td>
-          </tr>
+          {employees.map((employee) => (
+            <tr key={employee.id}>
+              <td>{employee.id}</td>
+              <td>{employee.name}</td>
+              <td>{employee.department}</td>
+              <td>{employee.salary}</td>
+            </tr>
+          ))}
         </tbody>
       </table>
     </div>
